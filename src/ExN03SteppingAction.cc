@@ -90,8 +90,8 @@ void ExN03SteppingAction::UserSteppingAction(const G4Step* aStep)
 
          G4double mu = ( rd.unit() ).dot ( aStep->GetPostStepPoint()->GetMomentumDirection() );
 
-         G4int i = 0; 
-         if ( mu < 0 ) i=-1; 
+         //G4int i = 0; 
+         //if ( mu < 0 ) i=-1; 
 /*
          std::cout << volume->GetName() 
                    << " " << volume->GetCopyNo()+1

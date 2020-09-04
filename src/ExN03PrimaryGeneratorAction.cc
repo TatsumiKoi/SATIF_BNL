@@ -89,11 +89,14 @@ void ExN03PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   //this function is called at the begining of event
   // 
   //G4double x0 = -0.5*(ExN03Detector->GetWorldSizeX());
+/*
   G4double y0 = 0.*cm, z0 = 0.*cm;
   if (rndmFlag == "on")
-     {y0 = (ExN03Detector->GetCalorSizeYZ())*(G4UniformRand()-0.5);
+  {   
+      y0 = (ExN03Detector->GetCalorSizeYZ())*(G4UniformRand()-0.5);
       z0 = (ExN03Detector->GetCalorSizeYZ())*(G4UniformRand()-0.5);
-     } 
+  } 
+*/
   //particleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
   //particleGun->SetParticlePosition(G4ThreeVector(0*cm,0.*cm,0.*cm));
 

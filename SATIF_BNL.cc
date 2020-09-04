@@ -256,7 +256,7 @@ if ( pl == "FTFC" ) {
       std::cout << pm << std::endl;
       G4ProcessVector* pv = pm->GetProcessList();  
       std::cout <<  pm->GetProcessList() << std::endl;
-      for ( G4int ip = 0 ; ip < pv->size() ; ip++ )
+      for ( G4int ip = 0 ; ip < (G4int)pv->size() ; ip++ )
       {
          std::cout << (*pv)[ip]->GetProcessName() << std::endl;
          if ( (*pv)[ip]->GetProcessName() == "NeutronInelastic" )

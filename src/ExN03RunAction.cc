@@ -44,7 +44,7 @@ ExN03RunAction::ExN03RunAction()
 {
 }
 
-ExN03RunAction::ExN03RunAction( ExN03DetectorConstruction* det , G4String pl )
+ExN03RunAction::ExN03RunAction( ExN03DetectorConstruction* det , G4String /*pl*/ )
 //071210
 : FieldName(15),
   FieldValue(14)
