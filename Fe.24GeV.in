@@ -1,0 +1,36 @@
+/control/verbose 2
+/run/verbose 2
+
+/N03/det/setNbOfLayers 1
+#
+#/N03/det/setAbsMat Concrete
+#/N03/det/setAbsThick 1 m
+#/N03/det/setSizeYZ 12 m
+
+/N03/det/setAbsMat Iron_BNL
+/N03/det/setAbsThick 1. mm
+#
+/N03/det/setGapMat Air
+/N03/det/setGapThick  0 cm
+#
+/N03/det/update
+#
+/process/list
+#
+/run/setCut 1 m
+#/tracking/verbose 1
+/N03/event/printModulo 4096
+/gun/particle proton
+/gun/energy  24 GeV
+
+/control/execute beam2.in
+#/run/beamOn 1
+#/run/beamOn 4
+#/run/beamOn 16
+#/run/beamOn 64
+#/run/beamOn 256
+#/run/beamOn 1024
+#/run/beamOn 4096
+#/run/beamOn 16384 
+#/run/beamOn 65536
+exit

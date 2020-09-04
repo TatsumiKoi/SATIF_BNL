@@ -1,0 +1,8 @@
+/run/beamOn 16 
+#/run/beamOn 64 
+#/run/beamOn 256
+#/run/beamOn 1024
+#/run/beamOn 4096
+##/run/beamOn 16384
+#/run/beamOn 65536
+#/run/beamOn 262144
