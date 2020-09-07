@@ -26,6 +26,9 @@ int main( int argc , char** argv)
    std::fstream data_file ( "data" , std::ios::in ); 
 
    std::vector< std::string > v_name;
+   std::string s;
+   data_file >> s;
+   v_name.push_back( s );
 
    int n = 1;
    while ( n <= nmax )
@@ -35,8 +38,6 @@ int main( int argc , char** argv)
       int m = 1;
       while ( m <= mmax )
       {
-         std::string s;
-         data_file >> s;
 
          if ( !data_file.good() ) 
          {
@@ -44,17 +45,18 @@ int main( int argc , char** argv)
            break;
          }
          std::string ss;
-         data_file >> ss;
-         data_file >> ss;
-         data_file >> ss;
+         //data_file >> ss;
+         //data_file >> ss;
+         //data_file >> ss;
 
          float x=0;
          data_file >> x;
+         //std::cout << x << std::endl;
          vp->push_back( x );
 
-         data_file >> ss;
+         //data_file >> ss;
 
-         v_name.push_back( s );
+         //v_name.push_back( s );
 
        //std::cout << n << " " <<  m << " " << s << " " <<  x << std::endl;
          m++;
