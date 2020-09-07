@@ -26,13 +26,17 @@ result()
 cpu()
 {
    EandT=2.83GeV.Concrete
-   grep "CPU time" $1.*.$EandT.log | grep -v Total > data ; ./calc_cpu.x >> dummy
+   echo $1.$EandT > data; grep "User=" $1.*.$EandT.log | cut -d"=" -f2 | cut -d"s" -f1  >> data ; ./calc_cpu.x >> dummy
+   #grep "CPU time" $1.*.$EandT.log | grep -v Total > data ; ./calc_cpu.x >> dummy
    EandT=2.83GeV.Iron
-   grep "CPU time" $1.*.$EandT.log | grep -v Total > data ; ./calc_cpu.x >> dummy
+   echo $1.$EandT > data; grep "User=" $1.*.$EandT.log | cut -d"=" -f2 | cut -d"s" -f1  >> data ; ./calc_cpu.x >> dummy
+   #grep "CPU time" $1.*.$EandT.log | grep -v Total > data ; ./calc_cpu.x >> dummy
    EandT=24GeV.Concrete
-   grep "CPU time" $1.*.$EandT.log | grep -v Total > data ; ./calc_cpu.x >> dummy
+   echo $1.$EandT > data; grep "User=" $1.*.$EandT.log | cut -d"=" -f2 | cut -d"s" -f1  >> data ; ./calc_cpu.x >> dummy
+   #grep "CPU time" $1.*.$EandT.log | grep -v Total > data ; ./calc_cpu.x >> dummy
    EandT=24GeV.Iron
-   grep "CPU time" $1.*.$EandT.log | grep -v Total > data ; ./calc_cpu.x >> dummy
+   echo $1.$EandT > data; grep "User=" $1.*.$EandT.log | cut -d"=" -f2 | cut -d"s" -f1  >> data ; ./calc_cpu.x >> dummy
+   #grep "CPU time" $1.*.$EandT.log | grep -v Total > data ; ./calc_cpu.x >> dummy
 
    cat dummy >> result_cpu
    rm dummy
@@ -110,8 +114,8 @@ ana_()
    then 
       rm result_cpu
    fi
-#   cpu ${PL}_${XS}
-#   mv result_cpu result_cpu_${PL}
+   cpu ${PL}_${XS}
+   mv result_cpu result_cpu_${PL}
    track ${PL}_${XS}
    mv result_track result_track_${PL}
 
