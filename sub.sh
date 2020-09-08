@@ -18,8 +18,8 @@ sub_()
       rm ${PL}_${XS}.${n}job.*.log.gz
       gzip ${PL}_${XS}.${n}job.*.log 
 
-      ./SATIF_BNL Fe.2.83GeV.in ${PL} ${XS} ${n} > ${PL}_${XS}.${n}job.2.83GeV.Iron.log &
-      ./SATIF_BNL Fe.24GeV.in ${PL} ${XS} ${n} > ${PL}_${XS}.${n}job.24GeV.Iron.log &
+      ./SATIF_BNL Iron.2.83GeV.in ${PL} ${XS} ${n} > ${PL}_${XS}.${n}job.2.83GeV.Iron.log &
+      ./SATIF_BNL Iron.24GeV.in ${PL} ${XS} ${n} > ${PL}_${XS}.${n}job.24GeV.Iron.log &
       ./SATIF_BNL Concrete.2.83GeV.in ${PL} ${XS} ${n} > ${PL}_${XS}.${n}job.2.83GeV.Concrete.log &
       ./SATIF_BNL Concrete.24GeV.in ${PL} ${XS} ${n} > ${PL}_${XS}.${n}job.24GeV.Concrete.log &
 
