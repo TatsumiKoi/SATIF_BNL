@@ -1,9 +1,11 @@
+#!/bin/sh
 version=geant4.10.06.p02
 version2=Geant4-10.6.2
 
 gcc_ver=gcc-10.2.0
 
 source /home/tkoi/ChubuU/gcc/$gcc_ver/setup-gcc.sh
+#. /home/usr4/dc/tkoi/Simulation/Gcc/$gcc_ver/setup-gcc.sh
 
 export CC=gcc
 export CXX=g++
@@ -14,6 +16,7 @@ echo "/home/tkoi/ChubuU/gcc/$gcc_ver/bin/gcc"
 echo "Environment variables CC and CXX are also set to the gcc and g++, respectively"
 
 source /home/tkoi/ChubuU/geant4/release/$version-install/share/$version2/geant4make/geant4make.sh
+#CURRENT=$PWD; cd /home/usr4/dc/tkoi/Simulation/Geant4/Release/$version-install/share/$version2/geant4make; . geant4make.sh; cd $CURRENT
 export Geant4_DIR=/home/tkoi/ChubuU/geant4/release/$version-install/lib/$version2
 
 #export -n G4VIS_USE_OIX
