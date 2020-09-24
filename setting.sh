@@ -1,10 +1,12 @@
 #svn co file:///afs/slac.stanford.edu/package/g4test/vol30/svn/tkoi/SATIF_BNL/trunk SATIF_BNL
 #cd ../SATIF_BNL
 
-alias vi="vim"
-alias cmake="/home/tkoi/ChubuU/cmake/cmake-3.18.2-Linux-x86_64/bin/cmake"
+#alias vi="vim"
+#alias cmake="/home/tkoi/ChubuU/cmake/cmake-3.18.2-Linux-x86_64/bin/cmake"
+#alias cmake="/home/usr4/dc/tkoi/Simulation/Cmake/cmake-3.18.2-Linux-x86_64/bin/cmake"
 
 source ./g4env.sh 
+#. ~/g4setting.sh
 
 #export G4WORKDIR=$PWD
 #export G4VIS_NONE=1
