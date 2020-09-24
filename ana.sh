@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source ./rootsetting.sh
+. ./rootsetting.sh
 
 XS=DEFAULT
 
@@ -125,8 +125,9 @@ ana_()
 do_all_physics_list_()
 {
    VERSION=$1
-   # "#" indicates comment out
+#   # "#" indicates comment out
    PLs=(`cat physics_lists/v$VERSION.dat | grep -v '#'`) 
+   #PLs={`cat physics_lists/v$VERSION.dat | grep -v '#'`} 
    nPL=${#PLs[*]}
 
    n=0
@@ -139,9 +140,9 @@ do_all_physics_list_()
 
 #do_all_physics_list_ 10.00
 
-ana_ Shielding
+#ana_ Shielding
 #ana_ ShieldingLEND
-#ana_ QGSP_BERT
+ana_ QGSP_BERT
 #ana_ FTFP_BERT
 #ana_ FTFP_INCLXX
 #ana_ QGSP_INCLXX
