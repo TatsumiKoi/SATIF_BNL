@@ -7,6 +7,7 @@
 
 source ./g4env.sh 
 #. ~/g4setting.sh
+#. ~/rootsetting.sh
 
 #export G4WORKDIR=$PWD
 #export G4VIS_NONE=1
