@@ -37,5 +37,6 @@ targ_energy_()
    sub_ $PL Concrete 24GeV
 }
 
-targ_energy_ Shielding
+#targ_energy_ Shielding
+targ_energy_ QGSP_BERT
 #sub_ QGSP_BERT
