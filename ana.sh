@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 . ./rootsetting.sh
 
@@ -127,7 +127,6 @@ do_all_physics_list_()
    VERSION=$1
 #   # "#" indicates comment out
    PLs=(`cat physics_lists/v$VERSION.dat | grep -v '#'`) 
-   #PLs={`cat physics_lists/v$VERSION.dat | grep -v '#'`} 
    nPL=${#PLs[*]}
 
    n=0
