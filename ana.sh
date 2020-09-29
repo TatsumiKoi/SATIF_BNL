@@ -1,6 +1,7 @@
 #!/bin/bash
 
 . ./rootsetting.sh
+#. ~/rootsetting.sh
 
 XS=DEFAULT
 
