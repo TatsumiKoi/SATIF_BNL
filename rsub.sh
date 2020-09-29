@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 sub_()
 {
    PL=$1
