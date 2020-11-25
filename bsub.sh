@@ -22,10 +22,9 @@ sub_()
    do
 
 #      ./SATIF_BNL ${TARG}.${ENERGY}.in ${PL} ${XS} ${n} > ${PL}_${XS}.${n}job.${ENERGY}.${TARG}.log &
-       #qsub ./torque.sh ${TARG}.${ENERGY}.in ${PL} ${XS} ${n} ${PL}_${XS}.${n}job.${ENERGY}.${TARG}.log
        qsub -v WORKDIR=$PWD,TARG=$TARG,ENERGY=$ENERGY,PL=$PL,XS=$XS,n=$n,OUTPUTFILE=${PL}_${XS}.${n}job.${ENERGY}.${TARG}.log ./torque.sh 
        #sh ./torque.sh ${TARG}.${ENERGY}.in ${PL} ${XS} ${n} ${PL}_${XS}.${n}job.${ENERGY}.${TARG}.log
-       sleep 1
+       sleep 2
 
       n=`expr $n + 1` 
    done
