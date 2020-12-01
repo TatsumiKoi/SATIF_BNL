@@ -13,12 +13,15 @@ do
    else 
       nn=$n
    fi
-   la15m=`rsh a${nn}u uptime | cut -d"," -f5`
-   #echo a${nn}u $la15m
-   if [ `echo "$la15m < 1.0" | bc` = 1 ]; then
-      echo a${nn} >> host
-      #echo OK
-   fi
+   rsh a${nn}u uptime
+   if [ $? = 0 ] ; then
+     la15m=`rsh a${nn}u uptime | cut -d"," -f5`
+     #echo a${nn}u $la15m
+     if [ `echo "$la15m < 1.0" | bc` = 1 ]; then
+        echo a${nn} >> host
+        #echo OK
+     fi
+   fi 
    n=` expr  $n + 1 ` 
 done
 
@@ -52,11 +55,14 @@ do
    else 
       nn=$n
    fi
-   la15m=`rsh c${nn}u uptime | cut -d"," -f5`
-   #echo a${nn}u $la15m
-   if [ `echo "$la15m < 1.0" | bc` = 1 ]; then
-      echo c${nn} >> host
-      #echo OK
+   rsh c${nn}u uptime
+   if [ $? = 0 ] ; then
+      la15m=`rsh c${nn}u uptime | cut -d"," -f5`
+      #echo a${nn}u $la15m
+      if [ `echo "$la15m < 1.0" | bc` = 1 ]; then
+         echo c${nn} >> host
+         #echo OK
+      fi
    fi
    n=` expr  $n + 1 ` 
 done
