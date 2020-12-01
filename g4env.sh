@@ -1,23 +1,49 @@
-#!/bin/sh
-version=geant4.10.06.p02
-version2=Geant4-10.6.2
+#!/bin/bash
+
+version=geant4.10.06.p03
+version2=Geant4-10.6.3
 
 gcc_ver=gcc-10.2.0
 
-source /home/tkoi/ChubuU/gcc/$gcc_ver/setup-gcc.sh
-#. /home/usr4/dc/tkoi/Simulation/Gcc/$gcc_ver/setup-gcc.sh
+#CentOS = 1
+#Ubuntu = 2
+#MacOS  = 3
+which lsb_release > /dev/null
+if [ $? == 0 ]; then
+   name=`lsb_release --id | cut -f2`
+   if [ $name = CentOS ] ; then 
+      OS=1
+   fi
+   if [ $name = Ubuntu ] ; then 
+      OS=2
+   fi 
+fi
+which sw_vers > /dev/null
+if [ $? = 0 ]; then
+   OS=3
+fi
+#echo $OS
 
-export CC=gcc
-export CXX=g++
+if [ $OS = 1 -o $OS = 2 ] ; then
+   export CC=gcc
+   export CXX=g++
+fi 
 
-echo "Setting up ChubuU standard installation of ${version2} libraries."
-echo "The libraries are built by $gcc_ver and now your \"gcc\" command is binding to"
-echo "/home/tkoi/ChubuU/gcc/$gcc_ver/bin/gcc"
-echo "Environment variables CC and CXX are also set to the gcc and g++, respectively"
-
-source /home/tkoi/ChubuU/geant4/release/$version-install/share/$version2/geant4make/geant4make.sh
-#CURRENT=$PWD; cd /home/usr4/dc/tkoi/Simulation/Geant4/Release/$version-install/share/$version2/geant4make; . geant4make.sh; cd $CURRENT
-export Geant4_DIR=/home/tkoi/ChubuU/geant4/release/$version-install/lib/$version2
+if [ $OS = 1 ] ; then
+   source /home/tkoi/ChubuU/gcc/$gcc_ver/setup-gcc.sh
+   BASEDIR=/home/tkoi/ChubuU/geant4/release
+   alias cmake="/home/tkoi/ChubuU/cmake/cmake-3.18.2-Linux-x86_64/bin/cmake"
+fi
+if [ $OS = 2 ] ; then
+   . /home/usr4/dc/tkoi/Simulation/Gcc/$gcc_ver/setup-gcc.sh
+   BASEDIR=/home/usr4/dc/tkoi/Simulation/Geant4/Release
+   alias cmake="/home/usr4/dc/tkoi/Simulation/Cmake/cmake-3.18.2-Linux-x86_64/bin/cmake"
+fi
+if [ $OS = 3 ] ; then
+   BASEDIR=/Users/tkoi/Simulation/Geant4/Release
+fi
+source $BASEDIR/$version-install/share/$version2/geant4make/geant4make.sh
+export Geant4_DIR=$BASEDIR/$version-install/lib/$version2
 
 #export -n G4VIS_USE_OIX
 
