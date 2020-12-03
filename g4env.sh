@@ -38,6 +38,9 @@ if [ $OS = 2 ] ; then
    . /home/usr4/dc/tkoi/Simulation/Gcc/$gcc_ver/setup-gcc.sh
    BASEDIR=/home/usr4/dc/tkoi/Simulation/Geant4/Release
    alias cmake="/home/usr4/dc/tkoi/Simulation/Cmake/cmake-3.18.2-Linux-x86_64/bin/cmake"
+   export ROOTSYS=/home/usr4/dc/tkoi/Simulation/Root/root-6.22.02
+   export LD_LIBRARY_PATH=$ROOTSYS/lib:${LD_LIBRARY_PATH}
+   export PATH=$ROOTSYS/bin:${PATH}
 fi
 if [ $OS = 3 ] ; then
    BASEDIR=/Users/tkoi/Simulation/Geant4/Release
