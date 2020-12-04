@@ -6,7 +6,7 @@ nmax=${#list[*]}
 
 while [ $n -lt $nmax ]
 do
-   echo qdel ${list[$n]}
+   qdel ${list[$n]}
    n=`expr $n + 1`
 done 
 
