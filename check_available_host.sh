@@ -55,7 +55,7 @@ do
    else 
       nn=$n
    fi
-   rsh c${nn}u uptime
+   rsh c${nn}u uptime > /dev/null
    if [ $? = 0 ] ; then
       la15m=`rsh c${nn}u uptime | cut -d"," -f5`
       #echo a${nn}u $la15m
