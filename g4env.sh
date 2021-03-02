@@ -1,7 +1,9 @@
 #!/bin/bash
 
-version=geant4.10.06.p03
-version2=Geant4-10.6.3
+version=geant4.10.07.p01
+version2=Geant4-10.7.1
+#version=geant4.10.06.p03
+#version2=Geant4-10.6.3
 
 gcc_ver=gcc-10.2.0
 
@@ -44,6 +46,9 @@ if [ $OS = 2 ] ; then
 fi
 if [ $OS = 3 ] ; then
    BASEDIR=/Users/tkoi/Simulation/Geant4/Release
+   export ROOTSYS=/Users/tkoi/Simulation/Root/root
+   export LD_LIBRARY_PATH=$ROOTSYS/lib:${LD_LIBRARY_PATH}
+   export PATH=$ROOTSYS/bin:${PATH}
 fi
 source $BASEDIR/$version-install/share/$version2/geant4make/geant4make.sh
 export Geant4_DIR=$BASEDIR/$version-install/lib/$version2
